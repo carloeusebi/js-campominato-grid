@@ -111,14 +111,27 @@ header>* {
 }
 
 .cells {
-    width: calc(100% / 10);
-    height: calc(100%/10);
     border-top: 5px solid var(--light-side);
     border-right: 5px solid var(--shadow-side);
     border-bottom: 5px solid var(--shadow-side);
     border-left: 5px solid var(--light-side);
     position: relative;
     cursor: pointer;
+}
+
+#matrix.easy>* {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+#matrix.medium>* {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+#matrix.hard>* {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 .cells.clicked,
