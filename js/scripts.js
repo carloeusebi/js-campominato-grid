@@ -1,8 +1,8 @@
 // DOM Elements
 const matrix = document.getElementById('matrix');
 const difficultyInput = document.getElementById('difficulty');
-const highScoreInput = document.getElementById('high-score');
-const currentScoreInput = document.getElementById('current-score');
+const highScoreOutput = document.getElementById('high-score');
+const currentScoreOutput = document.getElementById('current-score');
 const playButton = document.getElementById('play-button');
 const smile = playButton.querySelector('img')
 
@@ -12,8 +12,8 @@ const smileOver = 'img/gameover.png';
 
 let cells = [];
 let mines = [];
-let curretnScore;
-let hihgScore;
+let currentScore = 0;
+let highScore = 0;
 
 /*********************************************** */
 /*** FUNCTIONS ********************************* */
@@ -68,6 +68,11 @@ const gameOver = thisCell => {
     thisCell.classList.add('exploded');
     smile.src = smileOver;
 
+    if (currentScore > highScore) {
+        highScore = currentScore;
+        highScoreOutput.innerText = currentScore;
+    }
+
     for (let cell of cells) {
         cell.removeEventListener('click', cellClick);
         console.log(cell);
@@ -91,6 +96,9 @@ function cellClick() {
 
     this.classList.add('clicked');
 
+    currentScore++;
+    currentScoreOutput.innerText = currentScore;
+
 }
 
 /*********************************************** */
@@ -100,6 +108,8 @@ function cellClick() {
 
 playButton.addEventListener('click', () => {
     matrix.innerHTML = '';
+
+    currentScore = 0;
 
     smile.src = smilePlay;
 
