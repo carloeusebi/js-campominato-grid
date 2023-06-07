@@ -140,10 +140,6 @@ header>* {
     border: 1px solid var(--shadow-side);
 }
 
-.cells.bomb {
-    background-image: url(../img/mine.png);
-}
-
 .cells.exploded {
     background-color: red;
 }
