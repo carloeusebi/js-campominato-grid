@@ -20,6 +20,8 @@ body {
     padding-top: 20px;
     background-image: url(../img/windows-background.jpg);
     background-size: cover;
+
+    user-select: none;
 }
 
 main {
