@@ -94,11 +94,11 @@ function cellClick() {
         return;
     }
 
+    if (!this.classList.contains('clicked')) {
+        currentScore++;
+        currentScoreOutput.innerText = currentScore;
+    }
     this.classList.add('clicked');
-
-    currentScore++;
-    currentScoreOutput.innerText = currentScore;
-
 }
 
 /*********************************************** */
